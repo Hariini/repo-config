@@ -12,7 +12,7 @@ spring:
 mybatis:
   config-location: classpath:mapper/SqlMapConfig.xml
   mapper-locations: classpath:mapper/*/*.xml
-  type-aliases-package: cn.yunhe.java.pojo
+  type-aliases-package: cn.yunhe.java.pojo1111
 
 #日志
 logging:
