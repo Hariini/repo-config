@@ -1,0 +1,37 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: serviceproviderdb
+  datasource:
+    url: jdbc:mysql://192.168.1.111:3306/student?allowPublicKeyRetrieval=true&useSSL=false&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#默认使用HikariCP dataSource配置
+mybatis:
+  config-location: classpath:mapper/SqlMapConfig.xml
+  mapper-locations: classpath:mapper/*/*.xml
+  type-aliases-package: cn.yunhe.java.pojo
+
+#日志
+logging:
+  file:
+    path: d:/test
+    name: my.log
+  level:
+    root: debug
+    org: warn
+    cn.yunhe: trace
+
+eureka:
+  client:
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    
+info:
+  name: serviceproviderdb
+  springCloudVersion: Greenwich.SR5
